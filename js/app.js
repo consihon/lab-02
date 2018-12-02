@@ -1,5 +1,9 @@
 'use strict';
 
+
+const allKeys = [];
+const allPics = [];
+
 function Picture(obj){
     this.img_url = obj.image_url;
     this.title = obj.title;
@@ -25,9 +29,6 @@ Picture.prototype.render = function(key) {
         $clone.attr('class', this.keyword);
     }
 }
-
-const allKeys = [];
-const allPics = [];
 
 function readJson () {
     $.get('./data/page-1.json', 'json').then(data =>{
@@ -62,8 +63,6 @@ $("select").on("change", function(){
 
 
 readJson();
-
-
 
 function init (){
     
